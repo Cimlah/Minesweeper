@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore everything:
+/*
+
+# Except src:
+!/src
