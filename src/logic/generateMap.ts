@@ -8,26 +8,43 @@ export type Cell = {
   isRevealed: boolean
 }
 
-function placeBombs(width: number, height: number, firstClickCoords: { x: number; y: number }): Cell[][] {
+function placeBombs(
+  width: number,
+  height: number,
+  density: number,
+  firstClickCoords: { x: number; y: number }
+): Cell[][] {
   const map: Cell[][] = []
-  for (let y = 0; y < height; y++) {
-    map[y] = []
+  let numberOfBlanks = width * height - Math.floor(width * height * density) - 1
 
+  for (let y = 0; y < height; y++) {
+    map.push([])
     for (let x = 0; x < width; x++) {
-      map[y].push({
-        id: `${x}-${y}`,
-        value: getRandomIntInclusive(0, 1) == 0 ? false : true,
-        isRevealed: false,
-      } as Cell)
+      map[y].push({ id: `${x}-${y}`, value: true, isRevealed: false })
     }
   }
   map[firstClickCoords.y][firstClickCoords.x].value = false
 
+  while (numberOfBlanks > 0) {
+    const x = getRandomIntInclusive(0, width - 1)
+    const y = getRandomIntInclusive(0, height - 1)
+
+    if (map[y][x].value === true) {
+      map[y][x].value = false
+      numberOfBlanks--
+    }
+  }
+
   return map
 }
 
-export function generateMap(width: number, height: number, firstClickCoords: { x: number; y: number }): Cell[][] {
-  const map: Cell[][] = placeBombs(width, height, firstClickCoords)
+export function generateMap(
+  width: number,
+  height: number,
+  density: number,
+  firstClickCoords: { x: number; y: number }
+): Cell[][] {
+  const map: Cell[][] = placeBombs(width, height, density, firstClickCoords)
 
   let count = 0
   for (let y = 0; y < height; y++) {
