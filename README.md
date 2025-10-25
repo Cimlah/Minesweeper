@@ -8,7 +8,7 @@ This project implements the classic Minesweeper rules: a grid of cells contains 
 
 ## Tech stack (planned)
 
-- Next.js (React) — pages / app router depending on choice
+- Next.js app router
 - React (functional components + hooks)
 - JavaScript + TypeScript
 - TailwindCSS
@@ -30,6 +30,17 @@ This project implements the classic Minesweeper rules: a grid of cells contains 
 - Power-ups:
   - Time freeze
   - Shield
+- Player statistics:
+  - Total time played
+  - Total games played
+  - Wins
+  - Losses
+  - Fastest clear time
+  - Success rate
+- Achievement system
+  - First Blood - win your first game.
+  - Mine Sweeper Master - clear 100 mines
+  - Speed Demon - clear a medium board in under 60 seconds
 
 ## Gameplay rules (classic)
 
