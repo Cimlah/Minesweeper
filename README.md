@@ -23,7 +23,11 @@ This project implements the classic Minesweeper rules: a grid of cells contains 
   - Win / lose detection and end-game UI
 - Preset board sizes (small / medium / large) + custom board
 - Responsive UI (desktop + mobile)
-- Simple theming (light / dark or color presets)
+- Theme shop and point system:
+  - get points based on your performance
+  - buy colours
+  - buy skins
+  - buy icons
 - Game modes:
   - Classis Minesweeper
   - Time-attack
