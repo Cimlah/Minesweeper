@@ -24,3 +24,48 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Achievement notification animation */
+@keyframes bounce-in {
+  0% {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-10%) scale(1.05);
+  }
+  70% {
+    transform: translateX(5%) scale(0.95);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s ease-out forwards;
+}
+
+/* Cell hover effect */
+.cell-hover {
+  transition: transform 0.1s ease-in-out;
+}
+
+.cell-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Pulse animation for frozen timer */
+@keyframes pulse-freeze {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-freeze {
+  animation: pulse-freeze 1s ease-in-out infinite;
+}
