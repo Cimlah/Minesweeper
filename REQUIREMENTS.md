@@ -1,0 +1,24 @@
+# Functional Requirements
+
+- The application shall implement classic Minesweeper rules: a grid of cells containing hidden mines where the player reveals cells and marks suspected mines.
+- The application shall allow configuration of board dimensions (rows and columns) and mine count before game start.
+- The application shall randomly place the configured number of mines on the board at game initialization.
+- The application shall allow the player to reveal a covered cell.
+- The application shall end the game as a loss if a revealed cell contains a mine.
+- The application shall automatically reveal adjacent cells recursively when a revealed cell has zero adjacent mines (flood-fill behavior).
+- The application shall display the number of adjacent mines on revealed cells that have one or more neighboring mines.
+- The application shall allow the player to toggle a flag on a covered cell via right-click or long-press to mark suspected mines.
+- The application shall detect a win state when all non-mine cells are revealed and present an end-game UI for win/lose.
+- The application shall display and update a game timer and a remaining-mine counter during gameplay.
+- The application shall provide preset board sizes (small, medium, large) and support custom board sizes.
+- The application shall provide a responsive user interface usable on desktop and mobile devices.
+- The application shall include a theme shop and point system where players earn points based on performance and can purchase colors, skins, and icons.
+- The application shall offer game modes including Classic Minesweeper and Time-Attack.
+- The application shall implement power-ups (e.g., Time Freeze, Shield) that can be used during gameplay.
+- The application shall persist player statistics including total time played, total games played, wins, losses, fastest clear time, and success rate.
+- The application shall implement an achievement system (examples: award "First Blood" for first win, "Mine Sweeper Master" for clearing 100 mines, "Speed Demon" for clearing a medium board under 60 seconds).
+- The application shall be built using Next.js (app router), React functional components with hooks, and JavaScript/TypeScript.
+- The application shall use TailwindCSS for styling.
+- The system shall include unit tests for core board generation logic.
+- The system shall generate a UML diagram based on defined classes.
+- The application shall persist stats and provide a polished UI for the board and cells, keeping the game state correctly synchronized.
