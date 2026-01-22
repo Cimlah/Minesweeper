@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Minesweeper (Next.js)
 
-## Getting Started
+A simple Minesweeper game implemented as a small Next.js project. The UI will be built with React and backend with NextJS.
 
-First, run the development server:
+## Project overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This project implements the classic Minesweeper rules: a grid of cells contains hidden mines, the player reveals cells and marks suspected mines. Revealing a mine ends the game; revealing all safe cells wins the game.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech stack (planned)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js app router
+- React (functional components + hooks)
+- JavaScript + TypeScript
+- TailwindCSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key features
 
-## Learn More
+- Core Minesweeper mechanics
+  - Board generation with configurable rows/columns and mine count
+  - Reveal cell (flood fill for empty neighbors)
+  - Flag/Mark cell
+  - Game timer and mine counter
+  - Win / lose detection and end-game UI
+- Preset board sizes (small / medium / large) + custom board
+- Responsive UI (desktop + mobile)
+- Theme shop and point system:
+  - get points based on your performance
+  - buy colours
+  - buy skins
+  - buy icons
+- Game modes:
+  - Classis Minesweeper
+  - Time-attack
+- Power-ups:
+  - Time freeze
+  - Shield
+- Player statistics:
+  - Total time played
+  - Total games played
+  - Wins
+  - Losses
+  - Fastest clear time
+  - Success rate
+- Achievement system
+  - First Blood - win your first game.
+  - Mine Sweeper Master - clear 100 mines
+  - Speed Demon - clear a medium board in under 60 seconds
 
-To learn more about Next.js, take a look at the following resources:
+## Gameplay rules (classic)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. The board contains a set number of mines randomly placed.
+2. Clicking a covered cell reveals it:
+   - If it contains a mine -> game over.
+   - If it has zero adjacent mines -> reveal adjacent cells recursively.
+   - Otherwise, show the number of adjacent mines.
+3. Right-click (or long-press) toggles a flag to mark a suspected mine.
+4. The game is won when all non-mine cells are revealed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Next steps / roadmap
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Initialize a Next.js app (TypeScript template).
+2. Implement core board generation and unit tests.
+3. Generate UML diagram based on defined classes
+4. Create UI for the board and cells, wire up game state.
+5. Add persistence for stats and small UI polish.
