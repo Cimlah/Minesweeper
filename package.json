@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "generate:uml": "node tools/uml/generate.js"
   },
   "dependencies": {
     "next": "16.1.4",
