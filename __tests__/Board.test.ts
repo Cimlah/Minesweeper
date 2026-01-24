@@ -259,8 +259,13 @@ describe("Board", () => {
 
     test("should flood fill for cells with no adjacent mines", () => {
       const board = new Board(5, 5, 1);
-      // Place mine in corner
-      board.placeMines(0, 0);
+      // Make mine placement deterministic (no shuffle)
+      (
+        board as unknown as { shuffleArray: (array: unknown[]) => void }
+      ).shuffleArray = () => {};
+
+      // Place mine in first available position (0,0) by excluding far corner
+      board.placeMines(4, 4);
 
       // Reveal a cell far from the mine
       const revealedCells = board.revealCell(4, 4);
